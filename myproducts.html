@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Purchased Products</title>
+  <link rel="icon" href="img/LOGO.png" type="png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="MobileOptimized" content="320" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/mainpage.css" rel="stylesheet" />
+  <style>
+    body {
+      background-image: url('img/bgimg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+
+    .text-black {
+      text-align: start;
+      color: black;
+    }
+
+    hr {
+      background-color: .000000;
+      margin: 1px -5px;
+      padding: 2px;
+    }
+
+    .alert.no-content {
+      display: none;
+    }
+
+    .alert,
+    .alert-message {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 2px;
+      font-size: 18px;
+      /* Adjust the font size as per your preference */
+      font-weight: bold;
+    }
+
+    .alert-message:empty {
+      display: none;
+    }
+
+    br {
+      margin: 0;
+    }
+
+    .my-btn {
+      font-size: 16px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .card-title2 {
+      font-size: 26px;
+      font-family:     'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .card-text {
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+    .container2 {
+        margin: 2px;
+        margin-top: 5px;
+        padding: 1px;
+        max-width: auto; /* Adjust the maximum width as needed */
+    }
+}
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content">
+
+      <div class="container container2">
+        <h5 class="card-title card-title2 text-white text-center">Purchased Products</h5>
+        <p class="card-text text-center text-white ">
+          Note: After completely receiving your income, the product will be removed from this record.
+        </p>
+      </div>
+
+      <!-- Select Pannel -->
+      <div class="container2 container card-header">
+
+        <!-- buttons -->
+        <div class="d-flex justify-content-between">
+          <div>
+            <a class="btn btn-underline my-btn btn-primary active " id="item1-btn">Stable</a>
+          </div>
+          <div>
+            <a class="btn btn-underline my-btn btn-primary" id="item2-btn">Welfare</a>
+          </div>
+          <div>
+            <a class="btn btn-underline my-btn btn-primary" id="item3-btn">Activity</a>
+          </div>
+        </div>
+
+        <!-- Pannel Lists -->
+        <div class="row mt-4" id="card-section">
+
+          <div class="col-md-4" id="item1-cards">
+            <!-- item1 -->
+            <div id="stable-container"></div>
+          </div>
+
+          <div class="col-md-4" id="item2-cards" style="display: none;">
+            <!-- item2 -->
+            <div id="welfare-container"></div>
+          </div>
+
+          <div class="col-md-4" id="item3-cards" style="display: none;">
+            <!-- item3 -->
+            <div id="activity-container"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="btn-group" role="group">
+              <button class="btn btn-primary btn-icon btn-underline" id="homeButton"
+                onclick="location.href='mainpage.html'">
+                <img src="img/home.png" alt="Home" class="btn-icon-image" />
+                <span class="btn-text"><br />Home</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="downloadButton"
+                onclick="location.href='download.html'">
+                <img src="img/download.png" alt="Download" class="btn-icon-image" />
+                <span class="btn-text"><br />Download</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="inviteButton"
+                onclick="location.href='invite.html'">
+                <img src="img/invite.png" alt="Invite" class="btn-icon-image" />
+                <span class="btn-text"><br />Invite</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="profileButton"
+                onclick="location.href='profile.html'">
+                <img src="img/my.png" alt="Profile" class="btn-icon-image" />
+                <span class="btn-text"><br />Profile</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- footer -->
+  <script>
+    function setActiveButton() {
+      // Get the current page URL or any other identifier you're using
+      var currentPage = window.location.href;
+
+      // Get the buttons
+      var homeButton = document.getElementById("homeButton");
+      var downloadButton = document.getElementById("downloadButton");
+      var inviteButton = document.getElementById("inviteButton");
+      var profileButton = document.getElementById("profileButton");
+
+      // Remove active class from all buttons
+      homeButton.classList.remove("active");
+      downloadButton.classList.remove("active");
+      inviteButton.classList.remove("active");
+      profileButton.classList.remove("active");
+
+      // Set active class for the corresponding button based on the current page
+      if (currentPage.includes("mainpage.html")) {
+        homeButton.classList.add("active");
+      } else if (currentPage.includes("download.html")) {
+        downloadButton.classList.add("active");
+      } else if (currentPage.includes("invite.html")) {
+        inviteButton.classList.add("active");
+      } else if (currentPage.includes("myproducts.html")) {
+        profileButton.classList.add("active");
+      }
+    }
+
+    // Call the setActiveButton function when the page loads
+    window.onload = setActiveButton;
+  </script>
+
+  <!-- use this for multiple buttons -->
+  <script>
+    // JavaScript code to handle button clicks and show/hide card sections
+    const item1Btn = document.getElementById('item1-btn');
+    const item2Btn = document.getElementById('item2-btn');
+    const item3Btn = document.getElementById('item3-btn');
+
+    const item1Cards = document.getElementById('item1-cards');
+    const item2Cards = document.getElementById('item2-cards');
+    const item3Cards = document.getElementById('item3-cards');
+
+    item1Btn.addEventListener('click', () => {
+      item1Btn.classList.add('active');
+
+      item1Cards.style.display = 'block';
+      item2Cards.style.display = 'none';
+      item3Cards.style.display = 'none';
+    });
+
+    item2Btn.addEventListener('click', () => {
+      item2Btn.classList.add('active');
+
+      item1Cards.style.display = 'none';
+      item2Cards.style.display = 'block';
+      item3Cards.style.display = 'none';
+    });
+
+    item3Btn.addEventListener('click', () => {
+      item3Btn.classList.add('active');
+
+      item1Cards.style.display = 'none';
+      item2Cards.style.display = 'none';
+      item3Cards.style.display = 'block';
+    });
+  </script>
+
+  <script>
+    fetch('php/purchaseRecords.php')
+      .then(response => response.json())
+      .then(data => {
+        const stableContainer = document.getElementById('stable-container');
+        const welfareContainer = document.getElementById('welfare-container');
+        const activityContainer = document.getElementById('activity-container');
+
+        // Sort the data in descending order based on purchase date and time
+        data.sort((a, b) => new Date(b.purchase_date + ' ' + b.purchase_time) - new Date(a.purchase_date + ' ' + a.purchase_time));
+
+        data.forEach(item => {
+          const product = item.product;
+          const invest_money = item.invest_money;
+          const income_daily = item.income_daily;
+          const income_days = item.income_days;
+          const daily_count = item.daily_count;
+          const purchase_date = item.purchase_date;
+          const purchase_time = item.purchase_time;
+          const total_income = item.total_income;
+
+          // Create card element
+          const cardElement = document.createElement('div');
+          cardElement.className = 'card-body card-text text-black';
+
+          // Create and populate card title element (product name)
+          const cardTitleElement = document.createElement('h5');
+          cardTitleElement.className = 'card-title';
+          cardTitleElement.innerHTML = `Product: ${product}<hr>`;
+          cardElement.appendChild(cardTitleElement);
+
+          // Create and populate invest money element
+          const investMoneyElement = document.createElement('p');
+          investMoneyElement.textContent = `Invest Money: ₹${invest_money}`;
+          cardElement.appendChild(investMoneyElement);
+
+          // Create and populate income daily element
+          const incomeDailyElement = document.createElement('p');
+          incomeDailyElement.textContent = `Income Daily: ₹${income_daily}`;
+          cardElement.appendChild(incomeDailyElement);
+
+          // Create and populate daily count element
+          const dailyCountElement = document.createElement('p');
+          dailyCountElement.textContent = `Income Days: ${daily_count}`;
+          cardElement.appendChild(dailyCountElement);
+
+          // Create and populate daily count element
+          const incomeDaysElement = document.createElement('p');
+          incomeDaysElement.textContent = `Total Income Days: ${income_days}`;
+          cardElement.appendChild(incomeDaysElement);
+
+          // Create and populate total income element
+          const totalIncomeElement = document.createElement('p');
+          totalIncomeElement.textContent = `Total Income: ₹${total_income}`;
+          cardElement.appendChild(totalIncomeElement);
+
+          // Create and populate purchase time element
+          const purchaseTimeElement = document.createElement('p');
+          purchaseTimeElement.textContent = `Purchase Time: ${purchase_time}`;
+          cardElement.appendChild(purchaseTimeElement);
+
+          // Create and populate purchase date element
+          const purchaseDateElement = document.createElement('p');
+          purchaseDateElement.textContent = `Purchase Date: ${purchase_date}`;
+          cardElement.appendChild(purchaseDateElement);
+
+          // Append card element to the respective container based on the product name
+          if (product.includes('Stable')) {
+            console.log('Appending to Stable container');
+            stableContainer.appendChild(cardElement);
+          } else if (product.includes('Daily')) {
+            console.log('Appending to Welfare container');
+            welfareContainer.appendChild(cardElement);
+          } else if (product.includes('Cumulative')) {
+            console.log('Appending to Activity container');
+            activityContainer.appendChild(cardElement);
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="script/mainpage.js"></script>
+
+  <!-- use this for multiple buttons -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Add click event handlers to the buttons
+      $("#item1-btn").click(function () {
+        // Remove active class from all buttons
+        $(".my-btn").removeClass("active");
+        // Add active class to the clicked button
+        $(this).addClass("active ");
+
+        // Add your code for the "Withdraw" functionality here
+      });
+
+      $("#item2-btn").click(function () {
+        // Remove active class from all buttons
+        $(".my-btn").removeClass("active");
+        // Add active class to the clicked button
+        $(this).addClass("active");
+
+        // Add your code for the "Recharge" functionality here
+      });
+
+      $("#item3-btn").click(function () {
+        // Remove active class from all buttons
+        $(".my-btn").removeClass("active");
+        // Add active class to the clicked button
+        $(this).addClass("active");
+
+        // Add your code for the "All Records" functionality here
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Products</title>
+  <link rel="icon" href="img/LOGO.png" type="png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="320">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/preloader.css">
+  <link href="css/mainpage.css" rel="stylesheet">
+
+
+  <style>
+    body {
+      background-image: url('img/bgimg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+
+    .d-block,
+    .w-100 {
+      height: 200px;
+    }
+
+    #carouselExample {
+      height: 200px;
+      /* Set the desired height */
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      /* Align to the top */
+    }
+
+    p,
+    h5 {
+      color: #000000;
+    }
+
+    .my-btn {
+      font-size: 14px;
+    }
+
+    .card-title {
+      font-size: 18px;
+    }
+    
+    .btn {
+      width: 100%;
+    }
+  </style>
+
+  <!-- income -->
+  <style>
+    .active {
+      font-weight: bold;
+    }
+
+    .btn-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background-color: #000000;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .btn-underline.active::after {
+      transform: scaleX(1);
+    }
+
+    @media (max-width: 768px) {
+    .container2 {
+        margin: 2px;
+        margin-top: 5px;
+        padding: 1px;
+        max-width: auto; /* Adjust the maximum width as needed */
+    }
+}
+  </style>
+
+</head>
+
+<body>
+  <div id="preloader">
+    <img src="img/PayPointWay-removebg-preview.png" alt="Preloader Image">
+  </div>
+
+  <div class="wrapper">
+    <div class="content">
+      
+      <!-- Header corosal --> <!--change imgage of mainpage,  about & download -->
+      <header class="head">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/5.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/4.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Middle Page Jumpers  -->
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="btn-group" role="group">
+              <button class="btn btn-primary btn-icon btn-underline" onclick="location.href='recharge.html'">
+                <img src="img/recharge.png" alt="Recharge" class="btn-icon-image">
+                <span class="btn-text"><br>Recharge</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" onclick="location.href='withdraw.html'">
+                <img src="img/withdraw.png" alt="Withdrawal" class="btn-icon-image">
+                <span class="btn-text"><br>Withdraw</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" onclick="location.href='contact.html'">
+                <img src="img/online.png" alt="Contact" class="btn-icon-image">
+                <span class="btn-text"><br>Contact</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" onclick="location.href='about.html'">
+                <img src="img/about.png" alt="About" class="btn-icon-image" id="white">
+                <span class="btn-text"><br>About</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- income -->
+      <div class="container2 container card-header">
+
+        <!-- buttons -->
+        <div class="row justify-content-between">
+          <div class="col-auto">
+            <a class="btn btn-underline my-btn btn-primary active" id="stable-btn">Stable</a>
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-underline my-btn btn-primary" id="welfare-btn">Welfare</a>
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-underline my-btn btn-primary" id="activity-btn">Activity</a>
+          </div>
+        </div>
+
+        <!-- Income Lists -->
+        <div class="row mt-4" id="card-section">
+
+          <!-- stable -->
+          <div class="col-md-4" id="stable-cards">
+
+            <div class="card mb-4">
+              <img src="img/stable1.jpg" class="card-img-top" alt="Stable Image 1">
+              <div class="card-body">
+                <h5 class="card-title">Stable Income 1</h5>
+                <p class="card-text">
+                  Invest Money: ₹477<br>
+                  Income Daily: ₹150<br>
+                  Income Days: 35<br>
+                  Gift:VIP Level 1 <br>
+                  Total Income: ₹5,250<br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="stable()">Purchase</button>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <img src="img/stable2.jpg" class="card-img-top" alt="Stable Image 2">
+              <div class="card-body">
+                <h5 class="card-title">Stable Income 2</h5>
+                <p class="card-text">
+                  Invest Money: ₹1,400<br>
+                  Income Daily: ₹546<br>
+                  Income Days: 35<br>
+                  Gift:VIP Level 2 <br>
+                  Total Income: ₹19,110<br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="stable()">Purchase</button>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <img src="img/stable3.jpg" class="card-img-top" alt="Stable Image 3">
+              <div class="card-body">
+                <h5 class="card-title">Stable Income 3</h5>
+                <p class="card-text">
+                  Invest Money: ₹3,700<br>
+                  Income Daily: ₹1,461<br>
+                  Income Days: 35<br>
+                  Gift:VIP Level 3 <br>
+                  Total Income: ₹51,135<br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="stable()">Purchase</button>
+              </div>
+            </div>
+
+<!--
+            <div class="card mb-4">
+              <img src="img/stable4.jpg" class="card-img-top" alt="Stable Image 4">
+              <div class="card-body">
+                <h5 class="card-title">Stable Income 4</h5>
+                <p class="card-text">
+                  Invest Money: ₹8,000<br>
+                  Income Daily: ₹3,800<br>
+                  Income Days: 35<br>
+                  Gift:VIP Level 4 <br>
+                  Total Income: ₹133,000<br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="stable()">Purchase</button>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <img src="img/stable5.jpg" class="card-img-top" alt="Stable Image 5">
+              <div class="card-body">
+                <h5 class="card-title">Stable Income 5</h5>
+                <p class="card-text">
+                  Invest Money: ₹16,000<br>
+                  Income Daily: ₹7,000<br>
+                  Income Days: 35<br>
+                  Gift:VIP Level 5 <br>
+                  Total Income: ₹245,000<br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="stable()">Purchase</button>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <img src="img/stable6.jpg" class="card-img-top" alt="Stable Image 6">
+              <div class="card-body">
+                <h5 class="card-title">Stable Income 6</h5>
+                <p class="card-text">
+                  Invest Money: ₹30,000<br>
+                  Income Daily: ₹14,500<br>
+                  Income Days: 35<br>
+                  Gift:VIP Level 6 <br>
+                  Total Income: ₹507,500<br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="stable()">Purchase</button>
+              </div>
+            </div> -->
+
+            <div class="col-md-4" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">More Deals Soon...</h5>
+                <p class="card-text">
+                  Stay tuned for further updates as we unveil this game-changing income solution in the near future. Get
+                  ready to embark on a transformative journey towards financial prosperity!
+                </p>
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <!-- welfare -->
+          <div class="col-md-4" id="welfare-cards" style="display: none;">
+
+            <div class="card mb-4">
+              <img src="img/welfare1.jpg" class="card-img-top" alt="Welfare Image 1">
+              <div class="card-body">
+                <h5 class="card-title">Daily Income 1</h5>
+                <p class="card-text">
+                  Invest Money: ₹200<br>
+                  Income Daily: ₹90<br>
+                  Income Days: 3<br>
+                  Requirement: VIP Level 1<br>
+                  Total Income: ₹270
+                  <br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="welfare()">Purchase</button>
+              </div>
+            </div>
+            <!-- add product -->
+            <div class="card mb-4">
+              <img src="img/welfare2.jpg" class="card-img-top" alt="Welfare Image 2">
+              <div class="card-body">
+                <h5 class="card-title">Daily Income 2</h5>
+                <p class="card-text">
+                  Invest Money: ₹1,700<br>
+                  Income Daily: ₹700<br>
+                  Income Days: 3<br>
+                  Requirement: VIP Level 2<br>
+                  Total Income: ₹2,100<br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="welfare()">Purchase</button>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <img src="img/welfare3.jpg" class="card-img-top" alt="Welfare Image 3">
+              <div class="card-body">
+                <h5 class="card-title">Daily Income 3</h5>
+                <p class="card-text">
+                  Invest Money: ₹4,200<br>
+                  Income Daily: ₹1,700<br>
+                  Income Days: 3<br>
+                  Requirement: VIP Level 3<br>
+                  Total Income: ₹5,100<br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="welfare()">Purchase</button>
+              </div>
+            </div>
+
+            <!-- <div class="card mb-4">
+              <img src="img/welfare4.jpg" class="card-img-top" alt="Welfare Image 4">
+              <div class="card-body">
+                <h5 class="card-title">Daily Income 4</h5>
+                <p class="card-text">
+                  Invest Money: ₹9,000<br>
+                  Income Daily: ₹3,500<br>
+                  Income Days: 3<br>
+                  Requirement: VIP Level 4<br>
+                  Total Income: ₹10,500<br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="welfare()">Purchase</button>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <img src="img/welfare5.jpg" class="card-img-top" alt="Welfare Image 5">
+              <div class="card-body">
+                <h5 class="card-title">Daily Income 5</h5>
+                <p class="card-text">
+                  Invest Money: ₹15,000<br>
+                  Income Daily: ₹8,000<br>
+                  Income Days: 3<br>
+                  Requirement: VIP Level 5<br>
+                  Total Income: ₹24,000<br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="welfare()">Purchase</button>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <img src="img/welfare6.jpg" class="card-img-top" alt="Welfare Image 6">
+              <div class="card-body">
+                <h5 class="card-title">Daily Income 6</h5>
+                <p class="card-text">
+                  Invest Money: ₹28,000<br>
+                  Income Daily: ₹13,500<br>
+                  Income Days: 3<br>
+                  Requirement: VIP Level 6<br>
+                  Total Income: ₹40,500<br>
+                </p>
+                <button type="button" class="btn btn-primary" onclick="welfare()">Purchase</button>
+              </div>
+            </div> -->
+
+            <div class="col-md-4" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">More Deals Soon...</h5>
+                <p class="card-text">
+                  Stay tuned for further updates as we unveil this game-changing income solution in the near future. Get
+                  ready to embark on a transformative journey towards financial prosperity!
+                </p>
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <!-- activity -->
+          <div class="col-md-4" id="activity-cards" style="display: none;">
+
+
+            <!-- UNNCOMMENT WHEN LAUNCHING OR LAST DAY -->
+            <!-- <div class="card mb-4">
+              <img src="img/activity1.jpg" class="card-img-top" alt="Activity Image 1">
+              <div class="card-body">
+                <h5 class="card-title">Cumulative Income 1</h5>
+                <p class="card-text">
+                  Invest Money: ₹1,000<br>
+                  Income Daily: ₹1,500 <br>
+                  Income Days: 10<br>
+                  Requirement: VIP Level 1<br>
+                  Total Income: ₹15,000
+                  <br>
+                </p>
+                <button class="btn btn-primary" onclick=" welfare() ">Purchase</button>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <img src="img/activity2.jpg" class="card-img-top" alt="Activity Image 2">
+              <div class="card-body">
+                <h5 class="card-title">Cumulative Income 2</h5>
+                <p class="card-text">
+                  Invest Money: ₹3,000<br>
+                  Income Daily: ₹4,500<br>
+                  Income Days: 10<br>
+                  Requirement: VIP Level 2<br>
+                  Total Income: ₹45,000<br>
+                </p>
+                <button class="btn btn-primary" onclick=" welfare() ">Purchase</button>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <img src="img/activity3.jpg" class="card-img-top" alt="Activity Image 3">
+              <div class="card-body">
+                <h5 class="card-title">Cumulative Income 3</h5>
+                <p class="card-text">
+                  Invest Money: ₹8,100<br>
+                  Income Daily: ₹12,000<br>
+                  Income Days: 10<br>
+                  Requirement: VIP Level 3<br>
+                  Total Income: ₹120,000<br>
+                </p>
+                <button class="btn btn-primary" onclick=" welfare() ">Purchase</button>
+              </div>
+            </div> -->
+
+            <div class="card-body">
+              <h5 class="card-title">Cumulative: Event based Income</h5>
+              <p class="card-text">
+                Stay tuned for further updates as we unveil this game-changing income solution in the near future. Get
+                ready to embark on a transformative journey towards financial prosperity with Cumulative Income!
+              </p>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- purchase prompt -->
+    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="purchaseModalLabel">Confirm Purchase?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p id="investMoneyText"></p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" id="confirm" onclick="confirmPurchase()" class="btn btn-primary">Confirm</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container2">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="btn-group" role="group">
+            <button class="btn btn-primary btn-icon btn-underline" id="homeButton"
+              onclick="location.href='mainpage.html'">
+              <img src="img/home.png" alt="Home" class="btn-icon-image">
+              <span class="btn-text"><br>Home</span>
+            </button>
+            <button class="btn btn-primary btn-icon btn-underline" id="downloadButton"
+              onclick="location.href='download.html'">
+              <img src="img/download.png" alt="Download" class="btn-icon-image">
+              <span class="btn-text"><br>Download</span>
+            </button>
+            <button class="btn btn-primary btn-icon btn-underline" id="inviteButton"
+              onclick="location.href='invite.html'">
+              <img src="img/invite.png" alt="Invite" class="btn-icon-image">
+              <span class="btn-text"><br>Invite</span>
+            </button>
+            <button class="btn btn-primary btn-icon btn-underline" id="profileButton"
+              onclick="location.href='profile.html'">
+              <img src="img/my.png" alt="Profile" class="btn-icon-image">
+              <span class="btn-text"><br>Profile</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </div>
+
+
+  <!-- SCRIPT -->
+  <!-- PRELOADER -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var preloader = document.getElementById("preloader");
+
+      // Simulating a 2-second delay for demonstration purposes
+      setTimeout(function () {
+        preloader.style.display = "none";
+      }, 100);
+    });
+  </script>
+
+  <!-- corosal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var myCarousel = document.querySelector('#carouselExample');
+      var carousel = new bootstrap.Carousel(myCarousel, {
+        interval: 2000, // Set the interval time in milliseconds (2 seconds)
+        pause: false, // Disable pausing on mouse hover
+        wrap: true // Enable continuous looping of the carousel
+      });
+
+      // Start the carousel
+      carousel.cycle();
+    });
+  </script>
+
+  <!-- income -->
+  <script>
+    // JavaScript code to handle button clicks and show/hide card sections
+    const stableBtn = document.getElementById('stable-btn');
+    const welfareBtn = document.getElementById('welfare-btn');
+    const activityBtn = document.getElementById('activity-btn');
+
+    const stableCards = document.getElementById('stable-cards');
+    const welfareCards = document.getElementById('welfare-cards');
+    const activityCards = document.getElementById('activity-cards');
+
+    stableBtn.addEventListener('click', () => {
+      stableBtn.classList.add('active');
+
+      stableCards.style.display = 'block';
+      welfareCards.style.display = 'none';
+      activityCards.style.display = 'none';
+    });
+
+    welfareBtn.addEventListener('click', () => {
+      welfareBtn.classList.add('active');
+
+      stableCards.style.display = 'none';
+      welfareCards.style.display = 'block';
+      activityCards.style.display = 'none';
+    });
+
+    activityBtn.addEventListener('click', () => {
+      activityBtn.classList.add('active');
+
+      stableCards.style.display = 'none';
+      welfareCards.style.display = 'none';
+      activityCards.style.display = 'block';
+    });
+
+  </script>
+
+  <!-- footer -->
+  <script>
+    function setActiveButton() {
+      // Get the current page URL or any other identifier you're using
+      var currentPage = window.location.href;
+
+      // Get the buttons
+      var homeButton = document.getElementById("homeButton");
+      var downloadButton = document.getElementById("downloadButton");
+      var inviteButton = document.getElementById("inviteButton");
+      var profileButton = document.getElementById("profileButton");
+
+      // Remove active class from all buttons
+      homeButton.classList.remove("active");
+      downloadButton.classList.remove("active");
+      inviteButton.classList.remove("active");
+      profileButton.classList.remove("active");
+
+      // Set active class for the corresponding button based on the current page
+      if (currentPage.includes("mainpage.html")) {
+        homeButton.classList.add("active");
+      } else if (currentPage.includes("download.html")) {
+        downloadButton.classList.add("active");
+      } else if (currentPage.includes("invite.html")) {
+        inviteButton.classList.add("active");
+      } else if (currentPage.includes("profile.html")) {
+        profileButton.classList.add("active");
+      }
+    }
+
+    // Call the setActiveButton function when the page loads
+    window.onload = setActiveButton;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Add click event handlers to the buttons
+      $("#stable-btn").click(function () {
+        // Remove active class from all buttons
+        $(".btn-primary").removeClass("active");
+        // Add active class to the clicked button
+        $(this).addClass("active");
+      });
+
+      $("#welfare-btn").click(function () {
+        // Remove active class from all buttons
+        $(".btn-primary").removeClass("active");
+        // Add active class to the clicked button
+        $(this).addClass("active");
+      });
+
+      $("#activity-btn").click(function () {
+        // Remove active class from all buttons
+        $(".btn-primary").removeClass("active");
+        // Add active class to the clicked button
+        $(this).addClass("active");
+      });
+    });
+  </script>
+  <script src="script/mainpage.js"></script>
+</body>
+
+</html>

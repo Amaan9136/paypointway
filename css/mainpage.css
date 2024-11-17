@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.card-body {
+    width: auto;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #094d81;
+    border-radius: 5px;
+    background-color: rgb(242, 242, 242);
+    box-shadow: 0px 0px 5px 0px #103158;
+}
+
+.card {
+    background-color: #fff;
+}
+
+.card-header {
+    background-color: #103158;
+    color: rgb(242, 242, 242);
+    padding: 5px;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+.card-section {
+    height: 300px;
+    overflow-y: auto;
+}
+
+.model {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#investMoneyText,
+#purchaseModal {
+    font-weight: bold;
+}
+
+.card-img-top {
+    border: solid 2px #094d81;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0;
+}
+
+.card-title {
+    margin-bottom: .2rem;
+    margin-top: .5rem;
+    font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#white {
+    filter: invert(1);
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    padding: 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.container2 {
+    width: 90%;
+    margin-top: auto;
+    border: solid 3px #094d81;
+    border-radius: 3px;
+    margin: 5px;
+    margin-top: 10px;
+    padding-top: 3px;
+    padding: 3px;
+    background-color: #103158;
+}
+
+.btn-group {
+    display: flex;
+    height: auto;
+}
+
+.btn-underline {
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.btn-icon .btn-icon-image {
+    width: 25%;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-icon .btn-text {
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.btn-icon {
+    margin: 3px;
+}
+
+h1,
+.btn,
+.btn-primary {
+    font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn {
+    background-color: rgb(16, 49, 88);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: rgb(9, 77, 129);
+    color: #fff;
+}
+
+.btn-underline:hover::after {
+    transform: scaleX(1);
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    max-width: auto;
+    align-items: center;
+}
+
+.btn-check:active+.btn-primary,
+.btn-check:checked+.btn-primary,
+.btn-primary.active,
+.btn-primary:active,
+.show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: rgb(9, 77, 129);
+    border-color: rgb(16, 49, 88);
+}
+
+.btn-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.section-title {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+
+.list-item {
+    color: #fff;
+    margin-top: 5px;
+}
+
+.text-white {
+    color: #fff;
+}
+
+#alert-div1.no-content,
+#alert-div2.no-content {
+    display: none;
+}
+
+#alert-div1,
+#alert-div2,
+#alert-div3,
+#alert-div4,
+#alert-div5,
+#alert-message1,
+#alert-message2,
+#alert-message3,
+#alert-message4,
+#alert-message5 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#alert-message1:empty,
+#alert-message2:empty,
+#alert-message3:empty,
+#alert-message4:empty,
+#alert-message5:empty {
+    display: none;
+}
+
+br {
+    margin: 0;
+}
+
+.container2 {
+    margin: 5px;
+    margin-top: 10px;
+    padding: 3px;
+    background-color: #103158;
+}
+
+
+@media (min-width: 768px) {
+    /* Adjust the width for larger devices */
+    .container2 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Adjust the width for smaller devices */
+    .container2 {
+        width: 98%;
+    }
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}

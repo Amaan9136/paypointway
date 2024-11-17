@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Profile</title>
+  <link rel="icon" href="img/LOGO.png" type="png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="MobileOptimized" content="320" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/mainpage.css" rel="stylesheet" />
+  <style>
+    body {
+      background-image: url('img/bgimg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+
+    h5 {
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 0;
+      color: #fff;
+    }
+
+    .btn-text1 {
+      display: flex;
+      justify-content: center;
+      font-size: 16px;
+      color: #fff;
+      font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .btn-icon {
+      margin: 0px;
+    }
+
+    .btn-text2 {
+      font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 14px;
+    }
+
+    span {
+      text-align: middle;
+    }
+
+    hr {
+      background-color: #fff;
+      margin: 1px -5px;
+      padding: 2px;
+    }
+
+    .my-btn {
+      display: block;
+      width: 100%;
+      align-items: left;
+    }
+
+    .btn-text {
+      font-size: 16px;
+    }
+
+    .text-white {
+      font-size: larger;
+    }
+
+    .container {
+      margin: 15px 5px;
+    }
+
+    .text {
+      font-size: 14px;
+      margin: 6px 0px 0px 0px;
+      padding: 0px;
+      font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .text2 {
+      padding: 0px;
+      font-size: 14px;
+      font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+    }
+
+    #text {
+      color: black;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content">
+
+      <div class="container2">
+        <h5 class="card-title">My Profile</h5>
+        <hr>
+        <p class="btn-text2 text-center text-white" id="mobile">
+          Mobile Number: 8888888888
+        </p>
+      </div>
+
+      <!-- TOP -->
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="btn-group" role="group">
+              <div class="btn btn-icon">
+                <p class="btn-text2" id="recharge">0.00</p>
+                <p class="btn-text1">Recharge</p>
+              </div>
+              <div class="btn btn-icon">
+                <p class="btn-text2" id="byinvite">0.00</p>
+                <p class="btn-text1">Commission</p>
+              </div>
+              <div class="btn btn-icon">
+                <p class="btn-text2" id="balance">0.00</p>
+                <p class="btn-text1">Balance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle Page Jumpers  -->
+      <div class=" container2">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="btn-group" role="group">
+              <button class="btn btn-primary btn-icon btn-underline" onclick="location.href='recharge.html'">
+                <img src="img/recharge.png" alt="Recharge" class="btn-icon-image">
+                <span class="btn-text"><br>Recharge</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" onclick="location.href='withdraw.html'">
+                <img src="img/withdraw.png" alt="Withdrawal" class="btn-icon-image">
+                <span class="btn-text"><br>Withdraw</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" onclick="location.href='contact.html'">
+                <img src="img/online.png" alt="Contact" class="btn-icon-image">
+                <span class="btn-text"><br>Contact</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" onclick="location.href='about.html'">
+                <img src="img/about.png" alt="About" class="btn-icon-image" id="white">
+                <span class="btn-text"><br>About</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jumpers -->
+      <div class=" container2">
+        <button class="btn btn-primary btn-underline my-btn btn-text" onclick="location.href='myproducts.html'">My
+          Purchased Products</button>
+        <hr>
+        <button class="btn btn-primary btn-underline my-btn btn-text"
+          onclick="location.href='transactionRecords.html'">Transaction Records</button>
+        <hr>
+        <button class="btn btn-primary btn-underline my-btn btn-text"
+          onclick="location.href='inviteRecords.html'">Invite Records</button>
+        <hr>
+        <button class="btn btn-primary btn-underline my-btn btn-text"
+          onclick="location.href='showBankDetails.html'">Show Bank Details</button>
+        <hr>
+        <button class="btn btn-primary btn-underline my-btn btn-text" onclick="location.href='download.html'">App
+          Download</button>
+        <hr>
+        <button class="btn btn-primary btn-underline my-btn btn-text" onclick="location.href='mainpage.html'">Check
+          Products</button>
+        <hr>
+        <button class="btn btn-primary btn-underline my-btn btn-text" onclick="location.href='about.html'">Terms &
+          Conditions</button>
+        <hr>
+        <button class="btn btn-primary btn-underline my-btn btn-text" onclick="confirmLogout()">Logout</button>
+      </div>
+
+      <!-- About Amount Types Caption -->
+      <div class="container2 text-white">
+        <h4 class="text">Recharge Amount:</h4>
+        <p class="text2">Amount obtained from recharging your account and to make purchases.</p>
+        <hr>
+        <h4 class="text">Commission Amount:</h4>
+        <p class="text2">Amount earned by inviting friends once they make a payment.</p>
+        <hr>
+        <h4 class="text">Balance Amount:</h4>
+        <p class="text2">Available balance used for withdrawal.</p>
+      </div>
+
+      <!-- Logout Prompt -->
+      <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel">Confirm Logout?</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p id="text"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="confirm" onclick="confirmLogout()"
+                class="btn my-btn btn-primary">Confirm</button>
+              <button type="button" class="btn my-btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="btn-group" role="group">
+              <button class="btn btn-primary btn-icon btn-underline" id="homeButton"
+                onclick="location.href='mainpage.html'">
+                <img src="img/home.png" alt="Home" class="btn-icon-image" />
+                <span class="btn-text"><br />Home</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="downloadButton"
+                onclick="location.href='download.html'">
+                <img src="img/download.png" alt="Download" class="btn-icon-image" />
+                <span class="btn-text"><br />Download</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="inviteButton"
+                onclick="location.href='invite.html'">
+                <img src="img/invite.png" alt="Invite" class="btn-icon-image" />
+                <span class="btn-text"><br />Invite</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="profileButton"
+                onclick="location.href='profile.html'">
+                <img src="img/my.png" alt="Profile" class="btn-icon-image" />
+                <span class="btn-text"><br />Profile</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- Print Details -->
+  <script>
+    // Fetch balance, recharge, and byinvite values from the server
+    fetch('php/get_balance.php')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('mobile').textContent = "Mobile Number: " + data.mobile;
+        document.getElementById('recharge').textContent = data.recharge;
+        document.getElementById('byinvite').textContent = data.byinvite;
+        document.getElementById('balance').textContent = data.balance;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+
+
+  <!-- footer -->
+  <script>
+    function setActiveButton() {
+      // Get the current page URL or any other identifier you're using
+      var currentPage = window.location.href;
+
+      // Get the buttons
+      var homeButton = document.getElementById("homeButton");
+      var downloadButton = document.getElementById("downloadButton");
+      var inviteButton = document.getElementById("inviteButton");
+      var profileButton = document.getElementById("profileButton");
+
+      // Remove active class from all buttons
+      homeButton.classList.remove("active");
+      downloadButton.classList.remove("active");
+      inviteButton.classList.remove("active");
+      profileButton.classList.remove("active");
+
+      // Set active class for the corresponding button based on the current page
+      if (currentPage.includes("mainpage.html")) {
+        homeButton.classList.add("active");
+      } else if (currentPage.includes("download.html")) {
+        downloadButton.classList.add("active");
+      } else if (currentPage.includes("invite.html")) {
+        inviteButton.classList.add("active");
+      } else if (currentPage.includes("profile.html")) {
+        profileButton.classList.add("active");
+      }
+    }
+
+    // Call the setActiveButton function when the page loads
+    window.onload = setActiveButton;
+  </script>
+
+  <!-- logout -->
+  <script>
+    function confirmLogout() {
+      // Open the modal using JavaScript
+      const modal = new bootstrap.Modal(document.getElementById('Modal'));
+      modal.show();
+
+      // Set the text in the modal body
+      document.getElementById('text').textContent = 'Are you sure you want to logout?';
+
+      // Add an event listener to the confirm button in the modal
+      document.getElementById('confirm').addEventListener('click', () => {
+        // Send an AJAX request to the PHP script to destroy the session
+        fetch('php/logout.php')
+          .then(response => {
+            // Redirect to the login page
+            window.location.href = 'login.html';
+          })
+          .catch(error => {
+            console.error('Logout error:', error);
+          });
+      });
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Show Bank Details</title>
+  <link rel="icon" href="img/LOGO.png" type="png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="MobileOptimized" content="320" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/mainpage.css" rel="stylesheet" />
+  <style>
+    body {
+      background: url('img/bgimg.png') no-repeat center/cover;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 5px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .card-header {
+      background-color: #103158;
+      color: #fff;
+      padding: 5px;
+      margin-bottom: 5px;
+      border-radius: 5px !important;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      margin-top: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    a {
+      display: block;
+      margin-top: 5px;
+      text-align: center;
+      color: #103158;
+      text-decoration: none;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    form {
+      background-color: #f2f2f2;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .my-btn {
+      width: 100%;
+      font-size: 20px;
+    }
+
+
+    .card-title {
+      margin-bottom: 5px;
+      font-size: 26px;
+    }
+
+    hr {
+      background-color: #000000;
+      margin: 1px -5px;
+      padding: 2px;
+    }
+
+    @media (max-width: 768px) {
+    .container2 {
+        margin: 2px;
+        margin-top: 5px;
+        padding: 1px;
+        max-width: auto; /* Adjust the maximum width as needed */
+    }
+}
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content">
+
+      <div class=" container2">
+        <h5 class="card-title text-white text-center">Bank Details</h5>
+        <p class="card-text text-center text-white">
+          "IN CASE OF ANY ERRORS, KINDLY REACH OUT TO OUR CUSTOMER CARE FOR ASSISTANCE."
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="card-header">
+          <h1 class="card-title">Your Bank Details</h1>
+        </div>
+
+        <div id="alert-div1">
+          <div id="alert-message1" class="alert alert-sucess fade show" role="alert"></div>
+        </div>
+
+        <div id="alert-div2">
+          <div id="alert-message2" class="alert alert-danger fade show" role="alert"></div>
+        </div>
+
+        <label for="mobile">Mobile Number:</label>
+        <p id="mobile">8888888888</p>
+        <hr>
+        <label for="holder_name">Account Holder's Name:</label>
+        <p id="holder_name">NULL</p>
+        <hr>
+        <label for="account_number">Account Number:</label>
+        <p id="account_number">NULL</p>
+        <hr>
+        <label for="ifsc_code">IFSC Code:</label>
+        <p id="ifsc_code">NULL</p>
+        <hr>
+
+        <label class="form-label"><a href="contact.html">Found Mistakes in Bank Details?</a></label>
+        <button type="submit" id="submit" class="btn my-btn" onclick="window.location.href = 'profile.html';">Go
+          Back</button>
+      </div>
+
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="btn-group" role="group">
+              <button class="btn btn-primary btn-icon btn-underline" id="homeButton"
+                onclick="location.href='mainpage.html'">
+                <img src="img/home.png" alt="Home" class="btn-icon-image" />
+                <span class="btn-text"><br />Home</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="downloadButton"
+                onclick="location.href='download.html'">
+                <img src="img/download.png" alt="Download" class="btn-icon-image" />
+                <span class="btn-text"><br />Download</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="inviteButton"
+                onclick="location.href='invite.html'">
+                <img src="img/invite.png" alt="Invite" class="btn-icon-image" />
+                <span class="btn-text"><br />Invite</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="profileButton"
+                onclick="location.href='profile.html'">
+                <img src="img/my.png" alt="Profile" class="btn-icon-image" />
+                <span class="btn-text"><br />Profile</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- footer -->
+  <script>
+    function setActiveButton() {
+      // Get the current page URL or any other identifier you're using
+      var currentPage = window.location.href;
+
+      // Get the buttons
+      var homeButton = document.getElementById("homeButton");
+      var downloadButton = document.getElementById("downloadButton");
+      var inviteButton = document.getElementById("inviteButton");
+      var profileButton = document.getElementById("profileButton");
+
+      // Remove active class from all buttons
+      homeButton.classList.remove("active");
+      downloadButton.classList.remove("active");
+      inviteButton.classList.remove("active");
+      profileButton.classList.remove("active");
+
+      // Set active class for the corresponding button based on the current page
+      if (currentPage.includes("mainpage.html")) {
+        homeButton.classList.add("active");
+      } else if (currentPage.includes("download.html")) {
+        downloadButton.classList.add("active");
+      } else if (currentPage.includes("invite.html")) {
+        inviteButton.classList.add("active");
+      } else if (currentPage.includes("showBankDetails.html")) {
+        profileButton.classList.add("active");
+      }
+    }
+
+    // Call the setActiveButton function when the page loads
+    window.onload = setActiveButton;
+  </script>
+
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'php/check_bank_details.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+
+        if (response.hasOwnProperty('error')) {
+          // Error message received, display alert
+          document.getElementById('alert-div2').style.display = 'block';
+          document.getElementById('alert-div2').classList.add('alert-danger');
+          document.getElementById('alert-message2').textContent = response.error;
+
+          setTimeout(function () {
+            document.getElementById('alert-div1').style.display = 'block';
+            document.getElementById('alert-div1').classList.add('alert-success');
+            document.getElementById('alert-message1').textContent = 'Redirecting...';
+          }, 1000);
+
+          setTimeout(function () {
+            window.location.href = 'bankDetails.html';
+          }, 3000);
+        } else {
+          // Fetch balance, recharge, and byinvite values from the server
+          fetch('php/get_balance.php')
+            .then(response => response.json())
+            .then(data => {
+              document.getElementById('mobile').textContent = data.mobile;
+              document.getElementById('holder_name').textContent = data.holder_name;
+              document.getElementById('account_number').textContent = data.account_number;
+              document.getElementById('ifsc_code').textContent = data.ifsc_code;
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+        }
+      } else {
+        console.error('Request failed with status:', xhr.status);
+      }
+    };
+    xhr.send();
+  </script>
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

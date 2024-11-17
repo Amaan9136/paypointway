@@ -1,0 +1,535 @@
+<!-- THIS PAGE IS TO VERIFY UTR NUMBER -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MY PRIVATE PAGE FOR UTR & Withdraw VERIFICATION</title>
+  <link rel="icon" href="img/LOGO.png" type="png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="MobileOptimized" content="320" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/mainpage.css" rel="stylesheet" />
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 5px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .container2 {
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
+    .card-text {
+      font-size: 18px;
+    }
+
+    .card-title {
+      margin-bottom: 5px;
+      font-size: 26px;
+    }
+
+    .card-header {
+      background-color: #103158;
+      color: #fff;
+      padding: 5px;
+      margin-bottom: 5px;
+      border-radius: 5px !important;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      margin-top: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    a {
+      display: block;
+      margin-top: 5px;
+      text-align: center;
+      color: #103158;
+      text-decoration: none;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    form {
+      background-color: #f2f2f2;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .my-btn {
+      width: 100%;
+      font-size: 20px;
+    }
+
+    .external {
+      display: flex;
+      justify-content: space-around;
+      margin: 5px;
+    }
+
+    .btn1 {
+      background-color: rgb(16, 49, 88);
+      /* Change this to the color of your choice */
+      color: #fff;
+      border: none;
+      padding: 5px 5px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .btn-primary2 {
+      margin-top: 3px;
+      margin-bottom: 10px;
+      background-color: rgb(16, 49, 88);
+      border: none;
+      padding: 5px 5px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    input {
+      border-color: rgb(9, 77, 129);
+      color: rgb(9, 77, 129);
+      font-weight: bolder;
+      border: 2px solid rgb(9, 77, 129);
+      margin-bottom: 7px;
+    }
+
+    input:focus,
+    input:focus:valid {
+      border: 3px solid rgb(9, 77, 129);
+      border-color: rgb(9, 77, 129);
+      outline: none;
+    }
+
+    .bold {
+      font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 18px;
+      font-weight: 1000;
+      /* Increase the font weight for a bolder effect */
+      color: #222;
+      /* Darken the text color */
+    }
+
+    #on-click-recharge-show {
+      display: none;
+    }
+
+    .smaller-image {
+      width: 200px;
+      height: 200px;
+    }
+
+    .custom-select,
+    .image-label {
+      width: 200px;
+      padding: 8px;
+      margin-bottom: 4px;
+      font-size: 16px;
+      border-radius: 4px;
+      font-weight: bold;
+      border: 1px solid #ccc;
+    }
+
+    .custom-select:focus {
+      outline: none;
+      border-color: rgb(16, 49, 88);
+      box-shadow: 0 0 8px rgba(9, 77, 129, 0.1);
+    }
+
+    .container3 {
+      max-height: 300px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      margin: 0 auto;
+      padding: 5px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      overflow: auto;
+    }
+
+    .content {
+      flex-grow: 1;
+      overflow: scroll;
+      /* Enable scrolling for mobile view in both directions */
+    }
+
+    .pending {
+      font-weight: bold;
+    }
+
+    .withdrawal-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .withdrawal-table th,
+    .withdrawal-table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+      user-select: text;
+      /* Enable text selection in table cells */
+    }
+
+    /* Media Queries */
+    @media (max-width: 767px) {
+      .container3 {
+        flex-direction: column;
+      }
+
+      .container2 {
+        margin: 2px;
+        margin-top: 5px;
+        padding: 1px;
+        max-width: auto;
+        /* Adjust the maximum width as needed */
+      }
+
+      .content {
+        overflow: scroll;
+        /* Enable scrolling for mobile view in both directions */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content">
+
+      <div class="container2">
+        <h5 class="card-title text-white text-center">FORMS FOR MYSELF</h5>
+        <p class="card-text text-center text-white">
+          THIS IS FOR MY USE ONLY!!!
+        </p>
+      </div>
+
+      <!-- RECHARGE -->
+      <div class="container">
+        <div class="card-header">
+          <h1 class="card-title">RECHARGE VERIFICATION</h1>
+        </div>
+
+        <form id="Recharge-form">
+          <div id="alert-div2">
+            <div id="alert-message2" class="alert alert-danger fade show" role="alert"></div>
+          </div>
+          <div id="alert-div1">
+            <div id="alert-message1" class="alert alert-success fade show" role="alert"></div>
+          </div>
+
+          <label for="amount">Recharge Amount:</label>
+          <input type="text" id="amount" placeholder="Enter Recharge Amount" name="amount" required>
+
+          <label for="utr-number">Paste UTR Number:</label>
+          <input type="text" id="utr-number" placeholder="Enter 12-digit UTR Number" name="utr-number" required>
+
+          <button type="submit" id="submit1" class="btn my-btn btn-primary">Recharge Verify</button>
+        </form>
+      </div>
+
+      <!-- WITHDRAW -->
+      <div class="container">
+        <div class="card-header">
+          <h1 class="card-title">WITHDRAW VERIFICATION</h1>
+        </div>
+        <form id="Withdraw-form">
+          <div id="alert-div3">
+            <div id="alert-message3" class="alert alert-danger fade show" role="alert"></div>
+          </div>
+          <div id="alert-div4">
+            <div id="alert-message4" class="alert alert-success fade show" role="alert"></div>
+          </div>
+
+          <label for="mobile">User Mobile:</label>
+          <input type="text" id="mobile" placeholder="Enter Mobile Number" name="mobile" required>
+
+          <label for="status">Update Status:</label>
+          <select id="status" class="custom-select" required>
+            <option value="Success" class="custom-option">Success</option>
+            <option value="Rejected" class="custom-option">Rejected</option>
+            <option value="Pending" class="custom-option">Pending</option>
+          </select>
+
+          <button type="submit" id="submit2" class="btn my-btn btn-primary">Withdraw Verify</button>
+        </form>
+      </div>
+
+      <div class="container3">
+        <div class="content">
+          <!-- Response content here -->
+          <table id="withdrawalTable" class="withdrawal-table"></table>
+        </div>
+      </div>
+
+      <div class="container2">
+        <h5 class="card-title text-white text-center">My Rules</h5>
+        <ul class="text-white">
+          <li>THIS IS FOR MY USE</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- recharge js-->
+  <script>
+    // Recharge form submission event listener
+    document.getElementById('Recharge-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Retrieve the recharge amount and UTR number from the form
+      var rechargeAmount = document.getElementById('amount').value;
+      var utrNumber = document.getElementById('utr-number').value;
+
+      // Check if the recharge amount is less than 200 or not a valid number
+      if (isNaN(rechargeAmount) || rechargeAmount < 200) {
+        displayErrorMessage('Please enter a valid Recharge Amount.');
+        return; // Stop further execution
+      }
+
+      // Check if the UTR number is not a valid 12-digit number
+      if (!/^\d{12}$/.test(utrNumber)) {
+        displayErrorMessage('Please enter a valid 12-digit UTR Number.');
+        return; // Stop further execution
+      }
+
+      // Create a FormData object to send the data to the server
+      var formData = new FormData();
+      formData.append('utrNumber', utrNumber);
+      formData.append('rechargeAmount', rechargeAmount);
+
+      // Make an AJAX request to the PHP processing script
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'php/rechargeVerify.php', true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            // Request completed successfully
+            var response = JSON.parse(xhr.responseText);
+            console.log(response.message);
+            if (response.message.includes('Success')) {
+              displaySuccessMessage(response.message);
+            } else if (response.message.includes('Rejected')) {
+              displayErrorMessage(response.message);
+            } else {
+              displayErrorMessage(response.message);
+            }
+          } else {
+            // Request completed with an error
+            console.error('Error:', xhr.status);
+            displayErrorMessage('Recharge failed. Please try again.');
+          }
+        }
+      };
+      xhr.send(formData);
+    });
+
+    // Function to display error message
+    function displayErrorMessage(message) {
+      var alertMessage2 = document.getElementById('alert-message2');
+      var alertDiv2 = document.getElementById('alert-div2');
+      var alertDiv1 = document.getElementById('alert-div1');
+      alertMessage2.innerHTML = message;
+      alertDiv2.style.display = 'block';
+      alertDiv1.style.display = 'none';
+    }
+
+    // Function to display success message
+    function displaySuccessMessage(message) {
+      var alertMessage1 = document.getElementById('alert-message1');
+      var alertDiv1 = document.getElementById('alert-div1');
+      var alertDiv2 = document.getElementById('alert-div2');
+      alertMessage1.innerHTML = message;
+      alertDiv1.style.display = 'block';
+      alertDiv2.style.display = 'none';
+    }
+  </script>
+
+  <!-- withdraw js-->
+  <script>
+    document.getElementById('Withdraw-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Retrieve the mobile number and status from the form
+      var mobile = document.getElementById('mobile').value;
+      var status = document.getElementById('status').value;
+
+      console.log(status);
+
+      // Check if the mobile number is a valid 10-digit number
+      if (!/^\d{10}$/.test(mobile)) {
+        displayErrorMessage2('Please enter a valid 10-digit Mobile Number.');
+        return; // Stop further execution
+      }
+
+      // Create a FormData object to send the data to the server
+      var formData = new FormData();
+      formData.append('mobile', mobile);
+      formData.append('status', status);
+
+      // Make an AJAX request to the PHP processing script
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'php/withdrawVerify.php', true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            // Request completed successfully
+            var response = JSON.parse(xhr.responseText);
+            console.log(response.message);
+            if (response.message.includes('Success')) {
+              displaySuccessMessage2(response.message);
+            } else if (response.message.includes('Rejected')) {
+              displayErrorMessage2(response.message);
+            } else {
+              displayErrorMessage2(response.message);
+            }
+          } else {
+            // Request completed with an error
+            console.error('Error:', xhr.status);
+            displayErrorMessage2('Withdrawal update failed. Please try again.');
+          }
+        }
+      };
+      xhr.send(formData);
+    });
+
+    // Function to display error message
+    function displayErrorMessage2(message) {
+      var alertMessage3 = document.getElementById('alert-message3');
+      var alertDiv3 = document.getElementById('alert-div3');
+      var alertDiv4 = document.getElementById('alert-div4');
+      alertMessage3.innerHTML = message;
+      alertDiv3.style.display = 'block';
+      alertDiv4.style.display = 'none';
+    }
+
+    // Function to display success message
+    function displaySuccessMessage2(message) {
+      var alertMessage4 = document.getElementById('alert-message4');
+      var alertDiv4 = document.getElementById('alert-div4');
+      var alertDiv3 = document.getElementById('alert-div3');
+      alertMessage4.innerHTML = message;
+      alertDiv4.style.display = 'block';
+      alertDiv3.style.display = 'none';
+    }
+
+    // Make an AJAX request to get the response from the PHP script
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'php/get_pending_withdrawals.php', true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        var content = document.querySelector('.content');
+
+        if (response.length > 0) {
+          // Create the table element
+          var table = document.getElementById('withdrawalTable');
+          table.innerHTML = ''; // Clear any existing content
+
+          // Create the table header row
+          var tableHeaderRow = document.createElement('tr');
+          var headerCell1 = document.createElement('th');
+          headerCell1.textContent = 'Mobile';
+          var headerCell2 = document.createElement('th');
+          headerCell2.textContent = 'Withdrawal Amount';
+          var headerCell5 = document.createElement('th');
+          headerCell5.textContent = 'Account Number';
+          var headerCell4 = document.createElement('th');
+          headerCell4.textContent = 'IFSC Code';
+          var headerCell3 = document.createElement('th');
+          headerCell3.textContent = 'Holder Name';
+          var headerCell6 = document.createElement('th');
+          headerCell6.textContent = 'Status';
+
+          tableHeaderRow.appendChild(headerCell1);
+          tableHeaderRow.appendChild(headerCell2);
+          tableHeaderRow.appendChild(headerCell5);
+          tableHeaderRow.appendChild(headerCell4);
+          tableHeaderRow.appendChild(headerCell3);
+          tableHeaderRow.appendChild(headerCell6);
+          table.appendChild(tableHeaderRow);
+
+          // Create table rows for each entry in the response
+          response.forEach(function (withdrawal) {
+            var tableRow = document.createElement('tr');
+            var cell1 = document.createElement('td');
+            cell1.textContent = withdrawal.mobile;
+            var cell2 = document.createElement('td');
+            cell2.textContent = withdrawal.withdrawamount;
+            var cell5 = document.createElement('td');
+            cell5.textContent = withdrawal.account_number;
+            var cell4 = document.createElement('td');
+            cell4.textContent = withdrawal.ifsc_code;
+            var cell3 = document.createElement('td');
+            cell3.textContent = withdrawal.holder_name;
+            var cell6 = document.createElement('td');
+            cell6.textContent = withdrawal.status;
+
+            tableRow.appendChild(cell1);
+            tableRow.appendChild(cell2);
+            tableRow.appendChild(cell5);
+            tableRow.appendChild(cell4);
+            tableRow.appendChild(cell3);
+            tableRow.appendChild(cell6);
+            table.appendChild(tableRow);
+          });
+        } else {
+          var message = document.createElement('p');
+          message.textContent = 'No pending withdrawals found in the database!';
+          content.appendChild(message);
+        }
+      }
+    };
+    xhr.send();
+
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="script/mainpage.js"></script>
+</body>
+
+</html>

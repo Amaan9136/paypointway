@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Recharge</title>
+  <link rel="icon" href="img/LOGO.png" type="png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="MobileOptimized" content="320" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/mainpage.css" rel="stylesheet" />
+  <style>
+    body {
+      background-image: url('img/bgimg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 5px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .container2 {
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
+    .card-text {
+      font-size: 18px;
+    }
+
+    .card-title {
+      margin-bottom: 5px;
+      font-size: 26px;
+    }
+
+    .card-header {
+      background-color: #103158;
+      color: #fff;
+      padding: 5px;
+      margin-bottom: 5px;
+      border-radius: 5px !important;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      margin-top: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    a {
+      display: block;
+      margin-top: 5px;
+      text-align: center;
+      color: #103158;
+      text-decoration: none;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    form {
+      background-color: #f2f2f2;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .my-btn {
+      width: 100%;
+      font-size: 20px;
+    }
+
+    .external {
+      display: flex;
+      justify-content: space-around;
+      margin: 5px;
+    }
+
+    .btn1 {
+      background-color: rgb(16, 49, 88);
+      /* Change this to the color of your choice */
+      color: #fff;
+      border: none;
+      padding: 5px 5px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .btn-primary2 {
+      margin-top: 3px;
+      margin-bottom: 10px;
+      background-color: rgb(16, 49, 88);
+      border: none;
+      padding: 5px 5px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    input {
+      border-color: rgb(9, 77, 129);
+      color: rgb(9, 77, 129);
+      font-weight: bolder;
+      border: 2px solid rgb(9, 77, 129);
+      margin-bottom: 7px;
+    }
+
+    input:focus,
+    input:focus:valid {
+      border: 3px solid rgb(9, 77, 129);
+      border-color: rgb(9, 77, 129);
+      outline: none;
+    }
+
+    .bold {
+      font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 18px;
+      font-weight: 1000;
+      /* Increase the font weight for a bolder effect */
+      color: #222;
+      /* Darken the text color */
+    }
+
+    #on-click-recharge-show {
+      display: none;
+    }
+
+    .smaller-image {
+      width: 200px;
+      height: 200px;
+    }
+
+    .custom-select,
+    .image-label {
+      width: 200px;
+      padding: 8px;
+      margin-bottom: 4px;
+      font-size: 14px;
+      border-radius: 4px;
+      font-weight: bold;
+      border: 1px solid #ccc;
+    }
+
+    .custom-select:focus {
+      outline: none;
+      border-color: rgb(16, 49, 88);
+      box-shadow: 0 0 8px rgba(9, 77, 129, 0.1);
+    }
+
+    #alert-div1.no-content,
+    #alert-div2.no-content,
+    #alert-div3.no-content,
+    #alert-div4.no-content,
+    #alert-div5.no-content {
+      display: none;
+    }
+
+    #alert-div1,
+    #alert-div2,
+    #alert-div3,
+    #alert-div4,
+    #alert-div5,
+    #alert-message1,
+    #alert-message2,
+    #alert-message3,
+    #alert-message4,
+    #alert-message5 {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 2px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    #alert-message1:empty,
+    #alert-message2:empty,
+    #alert-message3:empty,
+    #alert-message4:empty,
+    #alert-message5:empty {
+      display: none;
+    }
+
+    .input-container {
+      position: relative;
+    }
+
+    .rupee-symbol {
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .amount-input {
+      padding-left: 20px;
+      /* Adjust as needed */
+    }
+
+    @media (max-width: 768px) {
+      .container2 {
+        margin: 2px;
+        margin-top: 5px;
+        padding: 1px;
+        max-width: auto;
+        /* Adjust the maximum width as needed */
+      }
+
+      .container {
+        max-width: auto;
+        /* Adjust the maximum width as needed */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content">
+
+      <div id="on-click-recharge-hide">
+        <div class="container2">
+          <h5 class="card-title text-white text-center">Recharge</h5>
+          <p class="card-text text-center text-white">
+            Recharge your products instantly with a few simple clicks!
+          </p>
+        </div>
+
+        <div class="container">
+          <div class="card-header">
+            <h1 class="card-title">Recharge Gateway</h1>
+          </div>
+
+          <form id="Recharge-form">
+            <div id="alert-div2">
+              <div id="alert-message2" class="alert alert-danger fade show" role="alert"></div>
+            </div>
+            <div id="alert-div1">
+              <div id="alert-message1" class="alert alert-success fade show" role="alert"></div>
+            </div>
+
+            <label for="amount">Recharge Amount:</label>
+            <div class="input-container">
+              <span class="rupee-symbol">&#8377;</span>
+              <input type="text" id="amount" class="amount-input" placeholder="Enter Recharge Amount" name="amount"
+                required>
+            </div>
+            
+            <label for="quickselect">Quick Select:</label>
+            <div class="external">
+              <!-- Quick select buttons -->
+              <!-- Button onclick event calls fillAmount() function to set the amount -->
+              <button type="button" class="btn btn1" onclick="fillAmount(477)">₹477</button>
+              <button type="button" class="btn btn1" onclick="fillAmount(1400)">₹1400</button>
+              <button type="button" class="btn btn1" onclick="fillAmount(3700)">₹3700</button>
+              <button type="button" class="btn btn1" onclick="fillAmount(8000)">₹8000</button>
+            </div>
+
+            <div class="external">
+              <!-- More quick select buttons -->
+              <!-- Button onclick event calls fillAmount() function to set the amount -->
+              <button type="button" class="btn btn1" onclick="fillAmount(200)">₹200</button>
+              <button type="button" class="btn btn1" onclick="fillAmount(1700)">₹1700</button>
+              <button type="button" class="btn btn1" onclick="fillAmount(4200)">₹4200</button>
+              <button type="button" class="btn btn1" onclick="fillAmount(9000)">₹9000</button>
+            </div>
+
+            <!-- set3 -->
+            <div class="external">
+              <!-- More quick select buttons -->
+            </div>
+
+            <button type="submit" id="submit1" class="btn my-btn btn-primary">Recharge</button>
+          </form>
+        </div>
+
+        <div class="container2">
+          <h5 class="card-title text-white text-center">Recharge Rules</h5>
+          <ul class="text-white">
+            <li>Minimum Recharge amount: 200Rs</li>
+            <li>Once the company receives the payment, it will be credited to the app.</li>
+            <li>Arrival time: 10 minutes - 24 hours (subject to bank transfer time). We
+              appreciate your patience.</li>
+            <li>In case you do not receive the recharge within 24 hours, kindly reach out to our customer care.</li>
+            <li>Stay connected with hassle-free product recharge and exceptional customer support.</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div id="on-click-recharge-show">
+        <div class="container2">
+          <h5 class="card-title text-white text-center">UPI&nbsp; Transaction</h5>
+          <p class="card-text text-center text-white">
+            Read Recharge Rules Below!
+          </p>
+        </div>
+        <div class="container">
+          <div class="card-header">
+            <h1 class="card-title">UTR Verification</h1>
+          </div>
+          <div id="alert-div4">
+            <div id="alert-message4" class="alert alert-danger fade show" role="alert"></div>
+          </div>
+          <div id="alert-div5">
+            <div id="alert-message5" class="alert alert-success fade show" role="alert"></div>
+          </div>
+
+          <p class="bold">Pay Amount ₹<span id="rechargeAmountValue"></span> from below options:</p>
+
+          <label for="amount">Select UPI ID:</label>
+          <select id="upi-select" class="custom-select">
+            <option value="kinglocker001@ybl" class="custom-option">kinglocker001@ybl</option>
+            <option value="royalclothing00@ibl" class="custom-option">royalclothing00@ibl</option>
+          </select>
+
+          <div id="alert-div3">
+            <div id="alert-message3" class="alert alert-success fade show" role="alert"></div>
+          </div>
+          <button class="btn btn-primary2" id="copyToClip" onclick="copyToClipboard()">Copy UPI ID</button>
+
+          <label for="utr-scanner">Pay to Scanner:</label>
+          <div id="scanner">
+            <div class="d-flex align-items-center justify-content-start">
+              <div class="image-container">
+                <img id="scanner1" src="img/scanner1.jpg" alt="Scanner 1" class="img-fluid smaller-image" />
+                <div class="image-label bold">kinglocker001@ybl</div>
+              </div>
+              <div class="image-container">
+                <img id="scanner2" src="img/scanner2.jpg" alt="Scanner 2" style="display: none;"
+                  class="img-fluid smaller-image" />
+                <div class="image-label bold" style="display: none;">royalclothing00@ibl</div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary2" id="toggleButton" onclick="toggleScanner()">Switch Scanner</button>
+            </div>
+          </div>
+
+          <form id="utr-form">
+            <label for="utr-number">Paste UTR Number:</label>
+            <input type="text" id="utr-number" placeholder="Enter 12-digit UTR Number" name="utr-number">
+            <button type="submit" id="submit2" class="btn my-btn btn-primary">Verify&nbsp; UTR&nbsp; Number</button>
+          </form>
+        </div>
+
+        <div class="container2">
+          <h5 class="card-title text-white text-center">Recharge Rules</h5>
+          <ul class="text-white">
+            <li>The recharge amount should match the UTR amount, else recharge will not be processed.</li>
+            <li>You can use any UPI app for payment.</li>
+            <li>You can pay to either UPI ID or Scanner.</li>
+            <li>Copy the 12-digit UTR Number from the payment app and paste it here.</li>
+            <li>Recharge requests below the minimum amount of ₹200 will not be processed.</li>
+            <li>Entering an invalid UPI Number may cause recharge failure, so please check before entering.</li>
+            <li>Once the company receives the payment, it will be credited to the app.</li>
+            <li>Arrival time: 10 minutes - 24 hours (subject to bank transfer time). We
+              appreciate your patience.</li>
+            <li>In case you do not receive the recharge within 24 hours, kindly reach out to our customer care.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="btn-group" role="group">
+              <button class="btn btn-primary btn-icon btn-underline" id="homeButton"
+                onclick="location.href='mainpage.html'">
+                <img src="img/home.png" alt="Home" class="btn-icon-image" />
+                <span class="btn-text"><br />Home</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="downloadButton"
+                onclick="location.href='download.html'">
+                <img src="img/download.png" alt="Download" class="btn-icon-image" />
+                <span class="btn-text"><br />Download</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="inviteButton"
+                onclick="location.href='invite.html'">
+                <img src="img/invite.png" alt="Invite" class="btn-icon-image" />
+                <span class="btn-text"><br />Invite</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="profileButton"
+                onclick="location.href='profile.html'">
+                <img src="img/my.png" alt="Profile" class="btn-icon-image" />
+                <span class="btn-text"><br />Profile</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- recharge js-->
+  <script>
+    // Recharge form submission event listener
+    document.getElementById('Recharge-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // prevent form submission
+
+      // Retrieve the recharge amount from the form
+      var rechargeAmount = document.getElementById('amount').value;
+      rechargeAmountwithComma = parseFloat(rechargeAmount).toLocaleString(undefined, { maximumFractionDigits: 0 });
+
+      // Check if the recharge amount is less than 200
+      if (rechargeAmount < 200) {
+        // Display the error message in the alert div
+        document.getElementById('alert-message2').innerHTML = 'Minimum recharge amount is 200.';
+        document.getElementById('alert-div2').style.display = 'block';
+        document.getElementById('alert-div1').style.display = 'none';
+        return; // Stop further execution
+      }
+
+      if (isNaN(rechargeAmount)) {
+        // Display the error message in the alert div
+        document.getElementById('alert-message2').innerHTML = 'Please enter a valid number.';
+        document.getElementById('alert-div2').style.display = 'block';
+        document.getElementById('alert-div1').style.display = 'none';
+        return; // Stop further execution
+      }
+
+      // Get the reference to the elements
+      var hideDiv = document.getElementById("on-click-recharge-hide");
+      var showDiv = document.getElementById("on-click-recharge-show");
+      // Hide the on-click-recharge-hide div
+      hideDiv.style.display = "none";
+      // Show the on-click-recharge-show div
+      showDiv.style.display = "block";
+      document.getElementById('rechargeAmountValue').textContent = rechargeAmountwithComma;
+
+      console.log('Recharge Amount:', rechargeAmount);
+    });
+  </script>
+
+  <!-- UTR js-->
+  <script>
+    // UTR verification form submission event listener
+    document.getElementById('utr-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Retrieve the UTR number from the form
+      var utrNumber = document.getElementById('utr-number').value;
+      var rechargeAmount = document.getElementById('amount').value;
+
+      // Check if the UTR number is not exactly 12 characters long
+      if ((utrNumber.length !== 12) || isNaN(utrNumber)) {
+        // Display an error message in alert div 4
+        var alertDiv4 = document.getElementById('alert-div4');
+        var alertMessage4 = document.getElementById('alert-message4');
+        alertMessage4.innerText = 'Invalid UTR Number!';
+        alertDiv4.style.display = 'block';
+
+        // Hide success message in alert div 5
+        var alertDiv5 = document.getElementById('alert-div5');
+        alertDiv5.style.display = 'none';
+
+        return; // Stop further execution
+      }
+
+      // Create a FormData object to send the data to the server
+      var formData = new FormData();
+      formData.append('utrNumber', utrNumber);
+      formData.append('rechargeAmount', rechargeAmount);
+
+      // Make an AJAX request to the PHP processing script
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'php/process_payment.php', true);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          // Request successful, display success message in alert div 5
+          var alertDiv5 = document.getElementById('alert-div5');
+          var alertMessage5 = document.getElementById('alert-message5');
+          var response = JSON.parse(xhr.responseText); // Parse the JSON response
+          if (response.status === 'success') {
+            alertMessage5.innerText = response.message;
+            alertDiv5.style.display = 'block';
+            // Hide success message in alert div 4
+            var alertDiv4 = document.getElementById('alert-div4');
+            alertDiv4.style.display = 'none';
+          } else {
+            // Display the error message in alert div 4
+            var alertDiv4 = document.getElementById('alert-div4');
+            var alertMessage4 = document.getElementById('alert-message4');
+            alertMessage4.innerText = response.message;
+            alertDiv4.style.display = 'block';
+
+            // Hide success message in alert div 5
+            var alertDiv5 = document.getElementById('alert-div5');
+            alertDiv5.style.display = 'none';
+          }
+        } else {
+          // Request failed, handle the error and display error message in alert div 4
+          var alertDiv4 = document.getElementById('alert-div4');
+          var alertMessage4 = document.getElementById('alert-message4');
+          alertMessage4.innerText = 'Payment processing failed. Error: ' + xhr.status;
+          alertDiv4.style.display = 'block';
+
+          // Hide success message in alert div 5
+          var alertDiv5 = document.getElementById('alert-div5');
+          alertDiv5.style.display = 'none';
+        }
+      };
+      xhr.onerror = function () {
+        // Request failed, handle the error and display error message in alert div 4
+        var alertDiv4 = document.getElementById('alert-div4');
+        var alertMessage4 = document.getElementById('alert-message4');
+        alertMessage4.innerText = 'Payment processing failed. Network Error.';
+        alertDiv4.style.display = 'block';
+
+        // Hide success message in alert div 5
+        var alertDiv5 = document.getElementById('alert-div5');
+        alertDiv5.style.display = 'none';
+      };
+      xhr.send(formData);
+
+      // Disable the submit button after form submission
+      document.getElementById('submit2').disabled = true;
+    });
+  </script>
+
+
+  <!-- FUNCTIONS JS -->
+  <script>
+    function copyToClipboard() {
+      // Retrieve the selected UPI ID from the select element
+      var selectElement = document.getElementById('upi-select');
+      var selectedUPIID = selectElement.value;
+
+      // Create a temporary textarea element to copy the text
+      var tempTextArea = document.createElement('textarea');
+      tempTextArea.value = selectedUPIID;
+      document.body.appendChild(tempTextArea);
+
+      // Select the text in the textarea and copy it to the clipboard
+      tempTextArea.select();
+      document.execCommand('copy');
+
+      // Remove the temporary textarea
+      document.body.removeChild(tempTextArea);
+
+      // Display the success message in the alert div
+      var alertDiv = document.getElementById('alert-div3');
+      var alertMessage = document.getElementById('alert-message3');
+      alertMessage.innerText = 'Copied to Clipboard!';
+      alertDiv.style.display = 'block';
+    }
+
+    function toggleScanner() {
+      var scanner1 = document.getElementById('scanner1');
+      var scanner2 = document.getElementById('scanner2');
+      var scanner1Label = document.querySelector('#scanner1 + .image-label');
+      var scanner2Label = document.querySelector('#scanner2 + .image-label');
+
+      if (scanner1.style.display === 'none') {
+        // Show Scanner 1
+        scanner1.style.display = 'block';
+        scanner1Label.style.display = 'block';
+
+        // Hide Scanner 2
+        scanner2.style.display = 'none';
+        scanner2Label.style.display = 'none';
+      } else {
+        // Show Scanner 2
+        scanner2.style.display = 'block';
+        scanner2Label.style.display = 'block';
+
+        // Hide Scanner 1
+        scanner1.style.display = 'none';
+        scanner1Label.style.display = 'none';
+      }
+    }
+  </script>
+
+
+  <!-- js footer -->
+  <script>
+    function setActiveButton() {
+      // Get the current page URL or any other identifier you're using
+      var currentPage = window.location.href;
+
+      // Get the buttons
+      var homeButton = document.getElementById("homeButton");
+      var downloadButton = document.getElementById("downloadButton");
+      var inviteButton = document.getElementById("inviteButton");
+      var profileButton = document.getElementById("profileButton");
+
+      // Remove active class from all buttons
+      homeButton.classList.remove("active");
+      downloadButton.classList.remove("active");
+      inviteButton.classList.remove("active");
+      profileButton.classList.remove("active");
+
+      // Set active class for the corresponding button based on the current page
+      if (currentPage.includes("recharge.html")) {
+        homeButton.classList.add("active");
+      }
+    }
+
+    // Call the setActiveButton function when the page loads
+    window.onload = setActiveButton;
+  </script>
+
+  <script>
+    function fillAmount(amount) {
+      document.getElementById('amount').value = amount;
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="script/mainpage.js"></script>
+</body>
+
+</html>

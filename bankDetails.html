@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bank Details</title>
+  <link rel="icon" href="img/LOGO.png" type="png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="MobileOptimized" content="320" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/mainpage.css" rel="stylesheet" />
+  <style>
+    body {
+      background: url('img/bgimg.png') no-repeat center/cover;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 5px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .card-title {
+      margin-bottom: 0;
+    }
+
+    .card-header {
+      background-color: #103158;
+      color: #fff;
+      padding: 5px;
+      margin-bottom: 5px;
+      border-radius: 5px !important;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      margin-top: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    a {
+      display: block;
+      margin-top: 5px;
+      text-align: center;
+      color: #103158;
+      text-decoration: none;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    form {
+      background-color: #f2f2f2;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .my-btn {
+      width: 100%;
+      font-size: 20px;
+    }
+
+    .container2 {
+      margin: 3px 0px 8px 0px;
+      font-size: 14px;
+    }
+
+    input {
+    border-color: rgb(9, 77, 129);
+    color: rgb(9, 77, 129);
+    font-weight: bolder;
+    border: 2px solid rgb(9, 77, 129);
+  }
+
+  input:focus,
+  input:focus:valid {
+    border: 3px solid rgb(9, 77, 129);
+    border-color: rgb(9, 77, 129);
+    outline: none;
+  }
+
+  @media (max-width: 768px) {
+    .container2 {
+        margin: 2px;
+        margin-top: 5px;
+        padding: 1px;
+        max-width: auto; /* Adjust the maximum width as needed */
+    }
+}
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content">
+
+      <div class="container2 text-white">
+        <p>
+          "PLEASE ENSURE PRECISION WHEN FILLING IN YOUR BANK DETAILS AS IT CAN ONLY BE SUBMITTED ONCE.
+          IN THE EVENT OF ANY ERRORS, DO NOT WORRY. KINDLY REACH OUT TO OUR CUSTOMER CARE FOR ASSISTANCE."
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="card-header">
+          <h1 class="card-title">Fill Bank Details</h1>
+        </div>
+
+        <form id="withdraw-form" action="php/postbankdetails.php" method="post">
+
+          <div id="alert-div1">
+            <div id="alert-message1" class="alert alert-sucess fade show" role="alert"></div>
+          </div>
+
+          <div id="alert-div2">
+            <div id="alert-message2" class="alert alert-danger fade show" role="alert"></div>
+          </div>
+
+          <label for="mobile">Mobile Number:</label>
+          <input type="text" id="mobile" placeholder="Enter 10-digit Number without +91" name="mobile" required>
+
+          <label for="holder_name">Account Holder's Name:</label>
+          <input type="text" id="holder_name" placeholder="Enter Account Holder's Name" name="holder_name" required>
+
+          <label for="account_number">Account Number:</label>
+          <input type="password" id="account_number" placeholder="Enter Account number" name="account_number" required>
+
+          <label for="confirm_account_number">Confirm Account Number:</label>
+          <input type="text" id="confirm_account_number" placeholder="Enter Account number again"
+            name="confirm_account_number" required>
+
+          <label for="ifsc_code">IFSC Code:</label>
+          <input type="text" id="ifsc_code" placeholder="Enter IFSC code" name="ifsc_code" required>
+
+          <label for="withdrawalPassword">Withdrawal Password:</label>
+          <input type="password" id="withdrawalPassword" placeholder="Enter Withdrawal password"
+            name="withdrawalPassword" required>
+
+          <label class="form-label"><a href="contact.html">Forgot Withdraw Password?</a></label>
+          <button type="submit" id="submit" class="btn my-btn ">Save Bank Details</button>
+
+        </form>
+      </div>
+
+
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="btn-group" role="group">
+              <button class="btn btn-primary btn-icon btn-underline" id="homeButton"
+                onclick="location.href='mainpage.html'">
+                <img src="img/home.png" alt="Home" class="btn-icon-image" />
+                <span class="btn-text"><br />Home</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="downloadButton"
+                onclick="location.href='download.html'">
+                <img src="img/download.png" alt="Download" class="btn-icon-image" />
+                <span class="btn-text"><br />Download</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="inviteButton"
+                onclick="location.href='invite.html'">
+                <img src="img/invite.png" alt="Invite" class="btn-icon-image" />
+                <span class="btn-text"><br />Invite</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="profileButton"
+                onclick="location.href='profile.html'">
+                <img src="img/my.png" alt="Profile" class="btn-icon-image" />
+                <span class="btn-text"><br />Profile</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- footer -->
+  <script>
+    function setActiveButton() {
+      // Get the current page URL or any other identifier you're using
+      var currentPage = window.location.href;
+
+      // Get the buttons
+      var homeButton = document.getElementById("homeButton");
+      var downloadButton = document.getElementById("downloadButton");
+      var inviteButton = document.getElementById("inviteButton");
+      var profileButton = document.getElementById("profileButton");
+
+      // Remove active class from all buttons
+      homeButton.classList.remove("active");
+      downloadButton.classList.remove("active");
+      inviteButton.classList.remove("active");
+      profileButton.classList.remove("active");
+
+      // Set active class for the corresponding button based on the current page
+      if (currentPage.includes("bankDetails.html")) {
+        homeButton.classList.add("active");
+      }
+    }
+
+    // Call the setActiveButton function when the page loads
+    window.onload = setActiveButton;
+  </script>
+
+  
+  <script>
+    document.getElementById('withdraw-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Retrieve the form data
+      var formData = new FormData(this);
+
+      // Make an AJAX request to the PHP file
+      fetch('php/postbankdetails.php', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            // Display success message
+            document.getElementById('alert-div1').style.display = 'block';
+            document.getElementById('alert-message1').innerHTML = data.message;
+            document.getElementById('alert-message1').classList.add('alert', 'alert-success');
+            document.getElementById('alert-div2').style.display = 'none';
+
+            // Disable the submit button to prevent multiple submissions
+            document.getElementById('submit').disabled = true;
+
+            // Redirect to the withdraw page after a delay
+            setTimeout(function () {
+              window.history.back();
+            }, 2000); // 2000 milliseconds delay (2 seconds)
+          } else {
+            // Display error message
+            document.getElementById('alert-div2').style.display = 'block';
+            document.getElementById('alert-message2').innerHTML = data.message;
+            document.getElementById('alert-message2').classList.add('alert', 'alert-danger');
+            document.getElementById('alert-div1').style.display = 'none';
+          }
+
+        })
+        .catch(error => {
+          console.error('An error occurred:', error);
+        });
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

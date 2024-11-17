@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Invite</title>
+  <link rel="icon" href="img/LOGO.png" type="png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="MobileOptimized" content="320" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/mainpage.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-image: url('img/bgimg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+
+    h5 {
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 0;
+      color: #fff;
+    }
+
+    .btn-primary2 {
+      width: 50%;
+      margin-top: 3px;
+      margin-bottom: 10px;
+      background-color: rgb(16, 49, 88);
+      border: none;
+      padding: 5px 5px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .align-c {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .text-black {
+      color: black;
+      font-size: 18px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    ul {
+      font-size: 18px;
+    }
+
+    .card-text {
+      font-size: 18px;
+    }
+
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+      .container2 {
+        margin: 2px;
+        margin-top: 5px;
+        padding: 1px;
+        max-width: auto;
+        /* Adjust the maximum width as needed */
+      }
+
+      .container {
+        max-width: auto;
+        /* Adjust the maximum width as needed */
+      }
+    }
+
+    #alert-div1.no-content,
+    #alert-div2.no-content,
+    #alert-div3.no-content {
+      display: none;
+    }
+
+    #alert-div1,
+    #alert-div2,
+    #alert-div3,
+    #alert-message1,
+    #alert-message2,
+    #alert-message3 {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 2px;
+      font-size: 16px;
+      /* Adjust the font size as per your preference */
+      font-weight: bold;
+    }
+
+    #alert-message1:empty,
+    #alert-message3:empty,
+    #alert-message2:empty {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content">
+
+      <div class="container container2">
+        <h5 class="card-title">Invite & Earn</h5>
+        <p class="card-text text-center text-white">
+          Start earning money effortlessly by simply inviting your friends.
+        </p>
+      </div>
+
+      <div class="container2">
+        <ul>
+          <li class="list-item">Direct Recommendation <br> (Level 1): 20%</li>
+          <li class="list-item">Indirect Recommendation <br> (Level 2): 3%</li>
+          <li class="list-item">Indirect Recommendation <br> (Level 3): 2%</li>
+          <li class="list-item">Earn up to 25% of the total investment amount when your friends invest in the platform.
+          </li>
+          <li class="list-item">Earn Extra bonus of ₹1,500 everyday by inviting 15 new members from the options below:
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-body align-c">
+        <div id="alert-div1">
+          <div id="alert-message1" class="alert alert-success fade show" role="alert"></div>
+        </div>
+        <div id="alert-div2">
+          <div id="alert-message2" class="alert alert-danger fade show" role="alert"></div>
+        </div>
+        <h4 class="section-title text-black">Bonus Invite Rewards:</h4>
+        <p class="text-black">Invite users and Earn bonus Rewards</p>
+
+        <p class="text-black rewardValue" id="rewardValue1">0 / 3</p>
+        <button class="btn-primary btn-primary2" id="rewardButton1" onclick="claim(100,1)">Claim ₹100</button>
+
+        <p class="text-black rewardValue" id="rewardValue2">0 / 8</p>
+        <button class="btn-primary btn-primary2" id="rewardButton2" onclick="claim(400,2)">Claim ₹400</button>
+
+        <p class="text-black rewardValue" id="rewardValue3">0 / 15</p>
+        <button class="btn-primary btn-primary2" id="rewardButton3" onclick="claim(1000,3)">Claim ₹1,000</button>
+      </div>
+
+
+      <div class="card-body align-c">
+        <div id="alert-div3">
+          <div id="alert-message3" class="alert alert-success fade show" role="alert"></div>
+        </div>
+        <h4 class="section-title text-black">Copy your Invite Code:</h4>
+        <p class="text-black" id="referral-code">Copy your unique referral code here</p>
+        <!-- Get referral-code by JavaScript -->
+        <button class="btn-primary btn-primary2" onclick="copyToClipboard('referral-code')">Copy Code</button>
+
+        <h4 class="section-title text-black">Copy your Invite Link:</h4>
+        <p class="text-black" id="referral-link">Copy your unique referral link here</p>
+        <!-- Get referral-link by JavaScript -->
+        <button class="btn-primary btn-primary2" onclick="copyToClipboard('referral-link')">Copy Link</button>
+        <p id="copy-status" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="btn-group" role="group">
+              <button class="btn btn-primary btn-icon btn-underline" id="homeButton"
+                onclick="location.href='mainpage.html'">
+                <img src="img/home.png" alt="Home" class="btn-icon-image" />
+                <span class="btn-text"><br />Home</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="downloadButton"
+                onclick="location.href='download.html'">
+                <img src="img/download.png" alt="Download" class="btn-icon-image" />
+                <span class="btn-text"><br />Download</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="inviteButton"
+                onclick="location.href='invite.html'">
+                <img src="img/invite.png" alt="Invite" class="btn-icon-image" />
+                <span class="btn-text"><br />Invite</span>
+              </button>
+              <button class="btn btn-primary btn-icon btn-underline" id="profileButton"
+                onclick="location.href='profile.html'">
+                <img src="img/my.png" alt="Profile" class="btn-icon-image" />
+                <span class="btn-text"><br />Profile</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+
+  <!-- Copy Code/Link -->
+  <script>
+    function copyToClipboard(elementId) {
+      /* Get the text content of the element with the specified ID */
+      var text = document.getElementById(elementId).innerText;
+
+      /* Create a temporary textarea element to copy the text */
+      var tempTextArea = document.createElement('textarea');
+      tempTextArea.value = text;
+      document.body.appendChild(tempTextArea);
+
+      /* Select the text in the textarea and copy it to the clipboard */
+      tempTextArea.select();
+      document.execCommand('copy');
+
+      /* Remove the temporary textarea */
+      document.body.removeChild(tempTextArea);
+
+      // Display the success message in the alert div
+      var alertDiv = document.getElementById('alert-div3');
+      var alertMessage = document.getElementById('alert-message3');
+      if (text.includes('invitationCode'))
+        alertMessage.innerText = 'Invite Link Copied to Clipboard!';
+      else
+        alertMessage.innerText = 'Invite Code Copied to Clipboard!';
+      alertDiv.style.display = 'block';
+    }
+
+    // Make a fetch request to the PHP file
+    fetch('php/get_balance.php')
+      .then(response => response.json())
+      .then(data => {
+        var invitationCode = data.invitationCode2store;
+        // Update the referral code element
+        var referralCodeElement = document.getElementById("referral-code");
+        referralCodeElement.innerText = invitationCode;
+
+        // Update the referral link element
+        var referralLinkElement = document.getElementById("referral-link");
+        referralLinkElement.innerText = "https://paypointway.great-site.net/?invitationCode=" + invitationCode;
+
+        //display reward
+        var reward = data.reward;
+
+        // Update the reward value in the HTML as you did before
+        document.getElementById('rewardValue1').innerText = reward + ' / 3';
+        document.getElementById('rewardValue2').innerText = reward + ' / 8';
+        document.getElementById('rewardValue3').innerText = reward + ' / 15';
+
+        // Check and enable/disable the buttons based on the reward value
+        var rewardButton1 = document.getElementById('rewardButton1');
+        var rewardButton2 = document.getElementById('rewardButton2');
+        var rewardButton3 = document.getElementById('rewardButton3');
+
+        rewardButton1.disabled = true;
+        rewardButton2.disabled = true;
+        rewardButton3.disabled = true;
+
+
+        if (reward >= 3) {
+          rewardButton1.disabled = false;
+        }
+        if (reward >= 8) {
+          rewardButton2.disabled = false;
+        }
+        if (reward >= 15) {
+          rewardButton3.disabled = false;
+        }
+      })
+      .catch(error => {
+        // Handle the error case
+        var statusElement = document.getElementById('copy-status');
+        statusElement.innerText = 'Error: ' + error;
+      });
+  </script>
+
+<script>
+  function claim(claimValue, clickbtn) {
+      claimValue = parseInt(claimValue);
+      clickbtn = parseInt(clickbtn);
+  
+      fetch('php/sendRewards.php', {
+        method: 'POST',
+        body: JSON.stringify({ claimValue: claimValue, clickbtn: clickbtn }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Full Response:', data);
+  
+          // Display success message
+          if (data.success) {
+            document.getElementById('alert-div1').style.display = 'block';
+            document.getElementById('alert-message1').innerHTML = data.message;
+            document.getElementById('alert-message1').classList.add('alert', 'alert-success');
+            document.getElementById('alert-div2').style.display = 'none';
+  
+            // Clear any previous error message
+            document.getElementById('alert-div2').style.display = 'none';
+          } else {
+            // Display error message
+            document.getElementById('alert-div2').style.display = 'block';
+            document.getElementById('alert-message2').innerHTML = data.message;
+            document.getElementById('alert-message2').classList.add('alert', 'alert-danger');
+            document.getElementById('alert-div1').style.display = 'none';
+          }
+        })
+        .catch(error => {
+          console.error('Fetch Error:', error);
+          // Display network error message
+          document.getElementById('alert-div2').style.display = 'block';
+          document.getElementById('alert-message2').innerHTML = "An error occurred during the claim process.";
+          document.getElementById('alert-message2').classList.add('alert', 'alert-danger');
+          document.getElementById('alert-div1').style.display = 'none';
+        });
+  }
+  </script>
+
+  <!-- footer -->
+  <script>
+    function setActiveButton() {
+      // Get the current page URL or any other identifier you're using
+      var currentPage = window.location.href;
+
+      // Get the buttons
+      var homeButton = document.getElementById("homeButton");
+      var downloadButton = document.getElementById("downloadButton");
+      var inviteButton = document.getElementById("inviteButton");
+      var profileButton = document.getElementById("profileButton");
+
+      // Remove active class from all buttons
+      homeButton.classList.remove("active");
+      downloadButton.classList.remove("active");
+      inviteButton.classList.remove("active");
+      profileButton.classList.remove("active");
+
+      // Set active class for the corresponding button based on the current page
+      if (currentPage.includes("mainpage.html")) {
+        homeButton.classList.add("active");
+      } else if (currentPage.includes("download.html")) {
+        downloadButton.classList.add("active");
+      } else if (currentPage.includes("invite.html")) {
+        inviteButton.classList.add("active");
+      } else if (currentPage.includes("profile.html")) {
+        profileButton.classList.add("active");
+      }
+    }
+
+    // Call the setActiveButton function when the page loads
+    window.onload = setActiveButton;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="script/mainpage.js"></script>
+</body>
+
+</html>
